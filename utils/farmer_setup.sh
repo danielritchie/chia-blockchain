@@ -46,6 +46,7 @@
 cd /home/ubuntu/chia-blockchain/
 git pull
 . ./activate
+chia start farmer
 # latch for startup
 starting=true
 while starting
@@ -53,7 +54,7 @@ do
 	chia show -c | grep "Connection error."
 	RC=$?
 	if (( "$RC" == "0" )); then
-		sleep 10
+		sleep 60
 		echo "Waiting for service to start..."
 	else
 		starting=false
@@ -61,7 +62,11 @@ do
 	fi
 done
 # try some initial connectoins
-./refresh_peers.sh
+utils/refresh_peers.sh
 
 
 echo "FINEE"
+
+
+
+#
