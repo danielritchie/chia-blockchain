@@ -26,6 +26,7 @@ chia show -a 148.251.54.162:8444
 #recently working introducers
 chia show -a introducer-or.chia.net:8444
 chia show -a introducer-va.chia.net:8444
+#chia configure --set-node-introducer introducer-va.chia.net:8444
 
 # bonus reddit ftw
 chia show -a 173.184.106.54:8444

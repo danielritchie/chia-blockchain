@@ -47,6 +47,9 @@ cd /home/ubuntu/chia-blockchain/
 git pull
 . ./activate
 chia start farmer
+
+
+
 # latch for startup
 starting=true
 while starting
@@ -69,3 +72,8 @@ utils/refresh_peers.sh
 utils/farm_status.sh
 
 echo "FINEE! Startup complete"
+
+
+
+
+#chia configure --set-node-introducer introducer-va.chia.net:8444
