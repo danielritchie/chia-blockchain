@@ -1,0 +1,115 @@
+#####################################
+Misc. Utility Notes 
+#####################################
+
+
+/// follow logs 
+tail -f ~/.chia/mainnet/log/debug.log
+tail -f ~/.chia/mainnet/log/debug.log
+
+
+
+
+
+/// TBD: complete backup script for plots/db's, and all of s3 (sync)
+
+#### BACKUP plots (TBD: archive to glacier?)
+aws s3 sync s3://lotsoplots s3://backup-lotsoplots --exclude "*" --include "*.plot" --include "*.sqlite*"  --exclude "*/*"
+
+#### re-try S3 backup of blockchain
+upload-blockchain.sh
+
+	#!/bin/bash
+	RC="1"
+
+	APPENDED_TEXT="160k"
+	TEMP_FILE="/home/ubuntu/.chia/mainnet/db/blockchain_v1_mainnet.sqlite_${APPENDED_TEXT}"
+
+	cp /home/ubuntu/.chia/mainnet/db/blockchain_v1_mainnet.sqlite ${TEMP_FILE}
+
+	while [ "$RC" == "1" ]
+	do
+	  echo ""
+	  echo "trying upload..."
+	  sleep 1
+
+	  aws s3 cp "${TEMP_FILE}" "s3://lotsoplots/blockchain_v1_mainnet.sqlite_${APPENDED_TEXT}"
+
+	  RC=`echo $?`
+
+	done
+
+	rm ${TEMP_FILE}
+	echo "uploaded!"
+
+
+#### COPY BLOCKCHAIN 
+aws s3 cp ~/.chia/mainnet/db/blockchain_v1_mainnet.sqlite s3://lotsoplots
+cd ~/.chia/mainnet/db/
+sudo aws s3 sync blockchain_v1_mainnet.sqlite s3://lotsoplots
+
+
+
+
+scp -i cha2021may.pem ubuntu@ec2-52-89-147-100.us-west-2.compute.amazonaws.com:/home/ubuntu/test.txt .
+
+
+
+https://github.com/Chia-Network/chia-blockchain/wiki/Farming-on-many-machines
+
+
+
+
+
+////// dup instance!!! - "chia-start"
+
+//DEBUG
+mount
+lsblk
+
+sudo mkfs -t ext4 /dev/nvme0n1
+#sudo mkdir /fastdisk
+sudo mount /dev/nvme0n1 /fastdisk
+sudo chmod 777 /fastdisk
+
+sudo mkfs -t ext4 /dev/xvdb
+#sudo mkdir /ebsvol
+sudo mount /dev/xvdb /ebsvol
+sudo chmod 777 /ebsvol
+
+
+
+
+ssh-keygen -f ~/copykey -t rsa
+
+
+
+
+scp -i cha2021may.pem ubuntu@ec2-35-155-218-73.us-west-2.compute.amazonaws.com:/home/ubuntu/copykey.pub .
+
+
+
+
+scp -i cha2021may.pem copykey.pub ubuntu@34.220.140.8:/home/ubuntu/.ssh
+
+
+
+
+
+sudo mkdir /ebssource
+sudo mkdir /ebscoop
+sudo mount /dev/xvdh /ebssource
+
+
+
+sudo mkfs -t ext4 /dev/xvdi
+sudo mount /dev/xvdi /ebscoop
+
+
+(venv) ubuntu@ip-172-31-14-81:~/chia-blockchain$ chia keys show
+Showing all public keys derived from your private keys:
+
+
+
+
+
