@@ -21,7 +21,7 @@ chia farm summary | grep "Farming status: Farming"
 		AOK=false
 		MSG="${MSG}FAIL: Not Farming! \n    chia farm summary\n"
 	fi
-chia farm summary | grep "Plot count: 0"
+chia farm summary | grep "Plot count: 0" 
 	RC=$?
 	if(( "$RC" == "0" )); then
 		AOK=false
@@ -34,7 +34,7 @@ chia farm summary | grep "Plot count:"
 		MSG="${MSG}FAIL: Can't Count Farm Plots! \n    chia farm summary\n"
 	fi
 	#GOAL: greater than 0 (ideally based on / equal to # plots available:
-	echo "FYI, goal plots: `ls /lotsoplots/*.plot  | wc -l`"
+	echo "Saved plots: `ls /lotsoplots/*.plot  | wc -l`"
 chia wallet show | grep "Sync status: Synced"
 	RC=$?
 	if(( "$RC" != "0" )); then
