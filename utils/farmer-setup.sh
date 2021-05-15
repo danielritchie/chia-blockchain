@@ -66,10 +66,10 @@ do
 done
 
 # try setting up some initial connectoins
-~/chia-blockchain/utils/refresh_peers.sh
+~/chia-blockchain/utils/fertilize-peers.sh
 
 # make sure things look OK
-~/chia-blockchain/utils/farm_status.sh
+~/chia-blockchain/utils/farm-status.sh
 
 echo "graph: ~/chiaharvestgraph/chiaharvestgraph ~/.chia/mainnet/log"
 echo "FINEE! Startup complete."
