@@ -43,7 +43,7 @@
 # USER SETUP
 #chmod 777 start.sh
 #./start.sh
-cd /home/ubuntu/chia-blockchain/
+cd ~/chia-blockchain/
 git pull
 . ./activate
 chia start farmer
@@ -52,7 +52,7 @@ chia start farmer
 
 # latch for startup
 starting=true
-while starting
+while $starting
 do
 	chia show -c | grep "Connection error."
 	RC=$?
@@ -66,14 +66,18 @@ do
 done
 
 # try setting up some initial connectoins
-utils/refresh_peers.sh
+~/chia-blockchain/utils/refresh_peers.sh
 
 # make sure things look OK
-utils/farm_status.sh
+~/chia-blockchain/utils/farm_status.sh
 
-echo "FINEE! Startup complete"
+echo "graph: ~/chiaharvestgraph/chiaharvestgraph ~/.chia/mainnet/log"
+echo "FINEE! Startup complete."
 
 
 
 
 #chia configure --set-node-introducer introducer-va.chia.net:8444
+
+
+#backup daily?

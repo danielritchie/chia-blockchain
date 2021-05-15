@@ -7,6 +7,8 @@ Misc. Utility Notes
 tail -f ~/.chia/mainnet/log/debug.log
 tail -f ~/.chia/mainnet/log/debug.log
 
+// Look for anything that takes longer than a second
+cat ../.chia/mainnet/log/debug.log | grep "Time:" | grep -v "Time: 0"
 
 
 
@@ -15,6 +17,12 @@ tail -f ~/.chia/mainnet/log/debug.log
 
 #### BACKUP plots (TBD: archive to glacier?)
 aws s3 sync s3://lotsoplots s3://backup-lotsoplots --exclude "*" --include "*.plot" --include "*.sqlite*"  --exclude "*/*"
+
+
+cp blockchain_wallet_v1_mainnet_3782091020.sqlite blockchain_wallet_v1_mainnet_3782091020.sqlite_260k
+aws s3 mv blockchain_wallet_v1_mainnet_3782091020.sqlite_260k s3://lotsoplots
+
+
 
 #### re-try S3 backup of blockchain
 upload-blockchain.sh
@@ -111,5 +119,5 @@ Showing all public keys derived from your private keys:
 
 
 
-
-
+cp blockchain_v1_mainnet.sqlite blockchain_v1_mainnet.sqlite_284k
+aws s3 mv blockchain_v1_mainnet.sqlite_284k s3://lotsoplots
