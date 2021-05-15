@@ -52,7 +52,7 @@ chia start farmer
 
 # latch for startup
 starting=true
-while $starting
+while [ "$starting" = true ]
 do
 	chia show -c | grep "Connection error."
 	RC=$?
