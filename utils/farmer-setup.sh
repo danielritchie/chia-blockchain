@@ -40,6 +40,11 @@
 
 
 
+
+#mount (can happen within fstab also but...)
+s3fs lotsoplots /lotsoplots
+
+
 # USER SETUP
 #chmod 777 start.sh
 #./start.sh
@@ -54,14 +59,14 @@ chia start farmer
 starting=true
 while [ "$starting" = true ]
 do
-	chia show -c | grep "Connection error."
+	chia show -c | grep 'Connection error.'
 	RC=$?
 	if (( "$RC" == "0" )); then
 		sleep 60
-		echo "Waiting for service to start..."
+		echo 'Waiting for service to start...'
 	else
 		starting=false
-		echo "chia ready!"
+		echo 'chia ready!'
 	fi
 done
 

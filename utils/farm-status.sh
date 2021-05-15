@@ -5,7 +5,11 @@
 #TBD - auto update connections if low
 #TBD - check log for time and errors 
 
-
+ISACT=`chia -h`
+if (( "$ISACT" == "128" ))
+	echo "looks like chia isn't active... activating"
+	~/chia-blockchain/activate
+fi
 
 AOK=true
 MSG=""

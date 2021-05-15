@@ -1,7 +1,8 @@
 ######################################################
 ### PLOTTER SETUP
 ######################################################
-#2cpu/8gb/2 threads m5n.large - too slow + disk bound
+#2cpu/8gb/2 threads m5n.large - st1: too slow + disk bound
+#2cpu/8gb/2 threads m5n.large - gp3: ~10 hrs
 #2cpu/8gb/1 thread m5n.large
 #2cpu/8gb?/1 thread - OK, time TBD
 #4cpu/8gb/2 threds
