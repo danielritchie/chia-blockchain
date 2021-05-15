@@ -6,7 +6,7 @@
 #TBD - check log for time and errors 
 
 ISACT=`chia -h`
-if (( "$ISACT" == "128" ))
+if (( "$ISACT" == "128" )); then
 	echo "looks like chia isn't active... activating"
 	~/chia-blockchain/activate
 fi
