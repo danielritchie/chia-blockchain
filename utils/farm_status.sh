@@ -50,7 +50,7 @@ chia wallet show | grep "fingerprint: 3782091020"
 PEER_NODE_COUNT=`chia show -c | grep FULL_NODE | wc -l`
 	if(( $PEER_NODE_COUNT < 5 )); then
 		AOK=false
-		MSG="${MSG}FAIL: Not Enough Peers! \n    chia show -c"
+		MSG="${MSG}FAIL: Not Enough Peers! \n    chia show -c\n"
 	fi
 PEER_INTRODUCER_COUNT=`chia show -c | grep INTRODUCER | wc -l`
 	if(( $PEER_INTRODUCER_COUNT == 0 )); then

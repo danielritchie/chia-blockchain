@@ -20,7 +20,7 @@
 
 #startup.sh 
 #	########### S3FS INSTALL 
-	sudo apt-get update -y
+#	sudo apt-get update -y
 #	sudo apt-get install s3fs -y
 #	echo *************:***** > passfile
 #	sudo mv passfile /etc/passwd-s3fs
@@ -61,12 +61,11 @@ do
 		echo "chia ready!"
 	fi
 done
-# try some initial connectoins
+
+# try setting up some initial connectoins
 utils/refresh_peers.sh
 
+# make sure things look OK
+utils/farm_status.sh
 
-echo "FINEE"
-
-
-
-#
+echo "FINEE! Startup complete"
