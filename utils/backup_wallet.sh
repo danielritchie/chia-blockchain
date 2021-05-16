@@ -2,7 +2,7 @@
 
 appendage=$1
 
-if (( $appendage == "" )); then
+if(( "$appendage" == "" )); then
     echo "Must specify the suffix to uniquely identify the file"
 	return 1
 fi
