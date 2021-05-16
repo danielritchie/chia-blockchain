@@ -8,7 +8,9 @@ if (( $appendage == "" )); then
 fi
 
 #copy the wallet so we don't interrupt anything
-cp blockchain_wallet_v1_mainnet_3782091020.sqlite blockchain_wallet_v1_mainnet_3782091020.sqlite_260k
-aws s3 mv blockchain_wallet_v1_mainnet_3782091020.sqlite_287k s3://lotsoplots
+cp ~/.chia/mainnet/wallet/blockchain_wallet_v1_mainnet_3782091020.sqlite ~/.chia/mainnet/wallet/blockchain_wallet_v1_mainnet_3782091020.sqlite_$appendage
+
+#backup to s3
+aws s3 mv ~/.chia/mainnet/wallet/blockchain_wallet_v1_mainnet_3782091020.sqlite_$appendage s3://lotsoplots
 
 
