@@ -2,6 +2,10 @@
 Misc. Utility Notes 
 #####################################
 
+# get laptop's IP
+curl -s http://checkip.amazonaws.com/
+
+
 
 /// follow logs 
 tail -f ~/.chia/mainnet/log/debug.log
@@ -19,8 +23,6 @@ cat ../.chia/mainnet/log/debug.log | grep "Time:" | grep -v "Time: 0"
 aws s3 sync s3://lotsoplots s3://backup-lotsoplots --exclude "*" --include "*.plot" --include "*.sqlite*"  --exclude "*/*"
 
 
-cp blockchain_wallet_v1_mainnet_3782091020.sqlite blockchain_wallet_v1_mainnet_3782091020.sqlite_260k
-aws s3 mv blockchain_wallet_v1_mainnet_3782091020.sqlite_260k s3://lotsoplots
 
 
 
@@ -41,7 +43,7 @@ upload-blockchain.sh
 	  echo "trying upload..."
 	  sleep 1
 
-	  aws s3 cp "${TEMP_FILE}" "s3://lotsoplots/blockchain_v1_mainnet.sqlite_${APPENDED_TEXT}"
+	  aws s3 cp "${TEMP_FILE}" "s3://lotsoplots/"
 
 	  RC=`echo $?`
 
@@ -90,7 +92,14 @@ sudo chmod 777 /ebsvol
 
 ssh-keygen -f ~/copykey -t rsa
 
+#exit session while plotting
+#Ctrl+b >>> d
 
+#re-attach to session 
+#tmux attach -t plot
+
+#kill the session 
+#tmux kill-session -t plot
 
 
 scp -i cha2021may.pem ubuntu@ec2-35-155-218-73.us-west-2.compute.amazonaws.com:/home/ubuntu/copykey.pub .
