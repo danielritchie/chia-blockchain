@@ -32,7 +32,7 @@ while [[ $CURRENT_PLOT -lt $PLOTS_IN_PARALLEL ]]; do
 	echo "Current Plot: $CURRENT_PLOT of $PLOTS_IN_PARALLEL"
 		
 	DATE_PREFIX=`date '+%Y-%m-%d_%H-%M-%S-%N'`
-	PLOT_LOGFILE="${OUTPUT_DIR}/plotlogs/${DATE_PREFIX}_${INSTANCE_ID}"
+	PLOT_LOGFILE="${OUTPUT_DIR}/plotlogs/${DATE_PREFIX}_${INSTANCE_ID}.log"
 
 	###DEBUG
 	echo "Now Plotting...
@@ -57,7 +57,7 @@ while [[ $CURRENT_PLOT -lt $PLOTS_IN_PARALLEL ]]; do
 	" > $PLOT_LOGFILE
 
 	# Run the whole thing in the background (has to be a better way!)
-	{time chia plots create -k 32 -b $PLOT_BYTES -r $PLOT_THREADS -u 128 -n 1 -t ${TMP_DIR} -d ${OUTPUT_DIR} -f a4ab1f8213ebc06cbce49bf56b923467cf3263fdf587efff5ef0b71635f7c5b51d239046586354db24dfab188071d978 -p 96cbc06eb710bb3c43e8a64208dd49bce37cf440ca1c2bd6ee3c99124818c8ad0520d0b3f401151148a3a0e3c97f9f03;echo "**************** PLOTTING COMPLETE ****************" >> $PLOT_LOGFILE ;aws s3 mv ${OUTPUT_DIR} s3://lotsoplots --recursive --exclude "*" --include "*.plot" --exclude "*/*"; aws s3 cp $PLOT_LOGFILE s3:/lotsoplots/plotlogs/} &
+	{ time chia plots create -k 32 -b $PLOT_BYTES -r $PLOT_THREADS -u 128 -n 1 -t ${TMP_DIR} -d ${OUTPUT_DIR} -f a4ab1f8213ebc06cbce49bf56b923467cf3263fdf587efff5ef0b71635f7c5b51d239046586354db24dfab188071d978 -p 96cbc06eb710bb3c43e8a64208dd49bce37cf440ca1c2bd6ee3c99124818c8ad0520d0b3f401151148a3a0e3c97f9f03;echo "**************** PLOTTING COMPLETE ****************" >> $PLOT_LOGFILE ;aws s3 mv ${OUTPUT_DIR} s3://lotsoplots --recursive --exclude "*" --include "*.plot" --exclude "*/*"; aws s3 cp $PLOT_LOGFILE s3:/lotsoplots/plotlogs/ } &
 	
 	
 	echo "Finished starting: $CURRENT_PLOT"
