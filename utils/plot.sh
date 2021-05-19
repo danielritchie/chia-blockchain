@@ -33,7 +33,8 @@ while [[ $CURRENT_PLOT -lt $PLOTS_IN_PARALLEL ]]; do
 	echo "Current Plot: $CURRENT_PLOT of $PLOTS_IN_PARALLEL"
 		
 	DATE_PREFIX=`date '+%Y-%m-%d_%H-%M-%S-%N'`
-	PLOT_LOGFILE="${OUTPUT_DIR}/plotlogs/${DATE_PREFIX}_${INSTANCE_ID}.log"
+	PLOT_LOGFILE="${TMP_DIR}/plotlogs/${DATE_PREFIX}_${INSTANCE_ID}.log"
+	mkdir -p $PLOT_LOGFILE
 
 	###DEBUG
 	echo "Now Plotting...
