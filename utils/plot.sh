@@ -27,7 +27,8 @@ CURRENT_PLOT=0
 
 while [[ $CURRENT_PLOT -lt $PLOTS_IN_PARALLEL ]]; do
 
-	CURRENT_PLOT=$CURRENT_PLOT + 1
+	#increment
+	CURRENT_PLOT=$((++CURRENT_PLOT))
 	
 	echo "Current Plot: $CURRENT_PLOT of $PLOTS_IN_PARALLEL"
 		
