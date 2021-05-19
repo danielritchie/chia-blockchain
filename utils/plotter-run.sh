@@ -46,13 +46,15 @@ cd /home/ubuntu/chia-blockchain/
 # Threads in parallel
 #time chia plots create -k 32 -b 5120 -r 2 -u 128 -n 5 -t /tmpdisk -d /tmpdisk -f a4ab1f8213ebc06cbce49bf56b923467cf3263fdf587efff5ef0b71635f7c5b51d239046586354db24dfab188071d978 -p 96cbc06eb710bb3c43e8a64208dd49bce37cf440ca1c2bd6ee3c99124818c8ad0520d0b3f401151148a3a0e3c97f9f03
 
-#Collect some info to be used later 
+#SET & Collect some info to be used later 
+PLOT_BYTES=4096
+PLOT_THREADS=4
+PLOTS_IN_PARALLEL=6
+PLOT_STAGGER_TIME=20
 PUBLIC_IP=`curl http://169.254.169.254/latest/meta-data/public-ipv4`
 LOCAL_HOSTNAME=`curl http://169.254.169.254/latest/meta-data/local-hostname`
 INSTANCE_TYPE=`curl http://169.254.169.254/latest/meta-data/instance-type`
 INSTANCE_ID=`curl http://169.254.169.254/latest/meta-data/instance-id`
-PLOT_BYTES=4096
-PLOT_THREADS=4
 DATE_PREFIX=`date '+%Y-%m-%d_%H-%M-%S-%N'`
 PLOT_LOGFILE="/mnt/plotlogs/${DATE_PREFIX}_${INSTANCE_ID}"
 
