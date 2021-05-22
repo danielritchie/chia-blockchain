@@ -115,7 +115,7 @@ scheduling:
         global_max_jobs: 48
 
         # Don't run any jobs (across all temp dirs) more often than this, in minutes.
-        global_stagger_m: 3
+        global_stagger_m: 20
 
         # How often the daemon wakes to consider starting a new plot job, in seconds.
         polling_time_s: 200
