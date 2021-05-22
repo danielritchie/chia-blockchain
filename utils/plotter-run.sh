@@ -1,5 +1,33 @@
 #!/bin/bash
 
+
+###### MANUAL TODO BEFORE RUNNING THIS 
+#
+#git clone https://github.com/danielritchie/chia-blockchain.git -b latest --recurse-submodules
+#~/chia-blockchain/utils/plotter-run.sh
+#
+#
+#
+#
+#
+#
+#
+# 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #CPU / Scheduling notes
 #at 38x4 seems to be pegged CPU BUT also some blips of freedom and underutilized disk
 #... may actually be OK since there will be heavy writes when the other ~10+ phases are going
@@ -10,6 +38,9 @@
 sudo apt-get update
 sudo apt-get upgrade -y
 
+
+
+#####################################
 # Install Git
 sudo apt install git -y
 
@@ -19,6 +50,8 @@ cd chia-blockchain
 
 sh install.sh
 
+
+#####################################
 . ./activate
 
 chia init
@@ -37,13 +70,6 @@ cp ~/chia-blockchain/utils/plotman.yaml /home/ubuntu/.config/plotman/plotman.yam
 
 ## Other goodies 
 sudo apt install nmon awscli -y
-aws configure
-	######################################### 
-	# AWS Access Key ID [None]: *********
-	# AWS Secret Access Key [None]: *********
-	# Default region name [None]: us-west-2
-	# Default output format [None]: text
-
 
 # Setup directories
 sudo mkdir -p /mnt
@@ -93,9 +119,28 @@ sudo chmod 777 /mnt/*
 
 
 ### LETS GO!
-tmux new -t plotwatch
-nohup utils/plotwatcher.sh &
+#tmux new -t plotwatch
+nohup ~/chia-blockchain/utils/plotwatcher.sh &
 
-tmux new -t plotman
+#tmux new -t plotman
 . ~/chia-blockchain/activate
-plotman interactive
+#plotman interactive
+plotman plot
+
+
+echo "Finee!
+
+!!!NOTICE!!!  Must manually configure s3 access with: 
+
+	aws configure
+	
+"	
+###### MANUAL !
+
+##################################################
+#aws configure
+	######################################### 
+	# AWS Access Key ID [None]: *********
+	# AWS Secret Access Key [None]: *********
+	# Default region name [None]: us-west-2
+	# Default output format [None]: text
