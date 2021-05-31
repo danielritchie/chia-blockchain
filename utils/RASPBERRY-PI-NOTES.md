@@ -1,7 +1,7 @@
-# After following the instructions, you'll be ready to start plotting!
-# https://www.tomshardware.com/how-to/raspberry-pi-chia-coin
+### After following the instructions, you'll be ready to start plotting!
+https://www.tomshardware.com/how-to/raspberry-pi-chia-coin
 
-# Here's exactly what you need to do, call/text if you have any trouble:
+### Here's exactly what you need to do, call/text if you have any trouble:
 
 	#1: plug in all your stuff (keyboard/mouse/monitor/disk... but not power!)
 
