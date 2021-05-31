@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # After following the instructions, you'll be ready to start plotting!
 # https://www.tomshardware.com/how-to/raspberry-pi-chia-coin
 
