@@ -3,26 +3,10 @@
 
 ###### MANUAL TODO BEFORE RUNNING THIS 
 #
-#git clone https://github.com/danielritchie/chia-blockchain.git -b latest --recurse-submodules
-#~/chia-blockchain/utils/plotter-run.sh
+#    git clone https://github.com/danielritchie/chia-blockchain.git -b latest --recurse-submodules
+#    ~/chia-blockchain/utils/plotter-run.sh
+#    (at end:     aws configure     )
 #
-#
-#
-#
-#
-#
-#
-# 
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -34,7 +18,6 @@
 # CPU pegged disk underutilized (have changed config to give first passess of ph1 some breathing room)
 
 
-# INSTALL CHIA
 sudo apt-get update
 sudo apt-get upgrade -y
 
@@ -44,7 +27,7 @@ sudo apt-get upgrade -y
 # Install Git
 sudo apt install git -y
 
-# Checkout the source and install
+# INSTALL CHIA
 git clone https://github.com/danielritchie/chia-blockchain.git -b latest --recurse-submodules
 cd chia-blockchain
 
@@ -125,7 +108,7 @@ nohup ~/chia-blockchain/utils/plotwatcher.sh &
 #tmux new -t plotman
 . ~/chia-blockchain/activate
 #plotman interactive
-plotman plot
+plotman plot &
 
 
 echo "Finee!
