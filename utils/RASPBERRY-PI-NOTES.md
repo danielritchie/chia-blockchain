@@ -66,6 +66,7 @@ https://www.tomshardware.com/how-to/raspberry-pi-chia-coin
 * Figure out when we can hang out next!  More to do... you'll be able to farm as soon as the blockchain sync's and you have a plot, as soon as tomorrow if all goes well, more likely another day or two
 			
 ### Other things to do / consider / discuss 
+* confirm walled & blockchain sync
 * configure chia / farming dir 
 * wallet address
 * port 8444 / seedings 
