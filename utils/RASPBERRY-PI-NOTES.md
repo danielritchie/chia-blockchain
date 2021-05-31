@@ -3,15 +3,15 @@ https://www.tomshardware.com/how-to/raspberry-pi-chia-coin
 
 ### Here's exactly what you need to do, call/text if you have any trouble:
 
-	#1: plug in all your stuff (keyboard/mouse/monitor/disk... but not power!)
+1. plug in all your stuff (keyboard/mouse/monitor/disk... but not power!)
 
-	#2: plugin power to turn on the pi
+1. plugin power to turn on the pi
 
-	#3: login to the pi
+1. login to the pi
 
-	#4: connect to your home wifi (may need to google how, but I think it's the top right corner icons)
+1. connect to your home wifi (may need to google how, but I think it's the top right corner icons)
  
-	#5: open terminal and run the following commands 
+1. open terminal and run the following commands 
 	
 		# COMMAND 1 - start a byobu multiplexer session called "plotting"
 		byobu -S plotting
@@ -57,7 +57,7 @@ https://www.tomshardware.com/how-to/raspberry-pi-chia-coin
 		# COMMAND 11 - exit the byobu session (it will stay running)
 		# Not a command, but press the "F6" key
 		
-		# What's next...  
+### What's next...  
 			# Lots of waiting :)
 			# It will take a few days for the plots to be created, maybe 15+ hours for each
 			# It will take a few days to sync the wallet and blockchain
@@ -65,7 +65,7 @@ https://www.tomshardware.com/how-to/raspberry-pi-chia-coin
 			# Call/text tomorrow night and let me know whether or not you have a plot
 			# Figure out when we can hang out next!  More to do... you'll be able to farm as soon as the blockchain sync's and you have a plot, as soon as tomorrow if all goes well, more likely another day or two
 			
-		# Other things to do / consider / discuss 
+### Other things to do / consider / discuss 
 			# configure chia / farming dir 
 			# wallet address
 			# port 8444 / seedings 
