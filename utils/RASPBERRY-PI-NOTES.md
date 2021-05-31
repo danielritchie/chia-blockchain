@@ -58,15 +58,15 @@ https://www.tomshardware.com/how-to/raspberry-pi-chia-coin
 		# Not a command, but press the "F6" key
 		
 ### What's next...  
-			# Lots of waiting :)
-			# It will take a few days for the plots to be created, maybe 15+ hours for each
-			# It will take a few days to sync the wallet and blockchain
-			# Check back in ~24 hours and look to see if there is anything in your plot directory (ls "</your/media/location>")
-			# Call/text tomorrow night and let me know whether or not you have a plot
-			# Figure out when we can hang out next!  More to do... you'll be able to farm as soon as the blockchain sync's and you have a plot, as soon as tomorrow if all goes well, more likely another day or two
+* Lots of waiting :)
+* It will take a few days for the plots to be created, maybe 15+ hours for each
+* It will take a few days to sync the wallet and blockchain
+* Check back in ~24 hours and look to see if there is anything in your plot directory (ls "</your/media/location>")
+* Call/text tomorrow night and let me know whether or not you have a plot
+* Figure out when we can hang out next!  More to do... you'll be able to farm as soon as the blockchain sync's and you have a plot, as soon as tomorrow if all goes well, more likely another day or two
 			
 ### Other things to do / consider / discuss 
-			# configure chia / farming dir 
-			# wallet address
-			# port 8444 / seedings 
-			# https://github.com/stolk/chiaharvestgraph
+* configure chia / farming dir 
+* wallet address
+* port 8444 / seedings 
+* https://github.com/stolk/chiaharvestgraph
